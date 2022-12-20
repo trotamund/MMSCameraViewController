@@ -332,7 +332,9 @@ open class MMSCameraViewController: UIViewController {
 
         photoSession.beginConfiguration()
 
-        photoSession.removeInput(cameraInput)
+        if let cameraInput = cameraInput {
+            photoSession.removeInput(cameraInput)
+        }
 
         photoSession.removeOutput(stillImageOutput)
 
